@@ -1,0 +1,50 @@
+<h1>{{ title }}</h1>
+
+<div id="content">
+
+  <label for="pagina"># de Pagina</label>
+  <input type="number" [(ngModel)]="pagina" />
+
+  <button class="opcion" (click)="ObtenerUsuario(pagina)">Obtiene datos de pagina</button>
+
+  <label for="id_usuario">Id_usuario</label>
+  <input type="number" [(ngModel)]="id_usuario" />
+
+  <button class="opcion" (click)="getUnicoUsuario(id_usuario)">Obtener Unico Usuario</button>
+
+  <ng-container *ngIf="lista_usuarios;else noHayDatos">
+
+    <table datatable class="dataTables_scroll dataTables_processing row-border hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Avatar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lista of lista_usuarios">
+          <td> {{ lista.id }}</td>
+          <td> {{ lista.first_name }}</td>
+          <td> {{ lista.last_name }} </td>
+          <td><img src="{{ lista.avatar }}" alt="Usuario" width="100px" height="100px"></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </ng-container>
+
+  <ng-template #noHayDatos>
+
+    <div class="nada">
+
+      <p>No hay datos de consulta</p>
+
+    </div>
+
+  </ng-template>
+
+
+</div>

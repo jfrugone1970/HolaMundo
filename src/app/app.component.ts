@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HolaMundo';
+  nombre = 'Martin';
+
+  recibirmensajeHijo(evento: string){
+    alert(evento);
+
+  }
 }

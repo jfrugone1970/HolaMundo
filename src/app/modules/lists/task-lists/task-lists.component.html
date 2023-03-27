@@ -1,0 +1,87 @@
+<h2>Lista de Elementos</h2>
+
+<p>Aqui vamos a iterar sobre una lista y vamos a mostrar varios Elementos</p>
+<!-- Bloque de directivos de atributos-->
+
+<p [ngStyle]="{color: 'tomato', fontWeight: 'bold'}">Lista de elementos</p>
+
+<p ngClass="underlined">Aqui vamos a iterar una lista y mostrar varios elementos</p>
+
+<p [ngClass]="{undefined: false, small: true}">Texto con estilo, aun no tienes elementos en la lista</p>
+
+<!-- Bloque de directivas estructurales-->
+
+
+
+<button (click)="cambiarCargando()"> {{ cargando ? 'Terminar Carga': 'Iniciar Carga'}}</button>
+
+<ng-container *ngIf="!cargando; else elseTemplate" >
+
+    <p>Cargando...</p>
+    <p>Todo listo</p>
+
+</ng-container>
+
+<ng-template #elseTemplate>
+
+  <p>Espere a que termine el proceso</p>
+
+</ng-template>
+
+<!-- Bloque para uso de NGFOR-->
+
+<div *ngFor="let producto of listaElementos; let i = index; let even = even">
+
+  <div>
+
+    <p>ID : {{i + 1}}</p>
+    <p [ngStyle]="even?{backgroundColor: 'blue', color: 'white', fontWeight: 'bold', padding: '10px'}:{background: 'green', color: 'red', fontWeight: 'bold', padding: '5px'}" class="producto">{{producto.nombre}} - {{producto.precio}}</p>
+    <p>{{producto.descripcion}}</p>
+
+
+
+  </div>
+
+
+</div>
+
+<!-- Bloque para entender *ngSwitch-->
+
+<div [ngSwitch]="opcion">
+  <p [id]="1" *ngSwitchCase="1">Has escogido la Opcion1</p>
+  <p [id]="2" *ngSwitchCase="2">Has escogido la Opcion2</p>
+  <p [id]="3" *ngSwitchCase="3">Has escogido la Opcion3</p>
+  <p [id]="4" *ngSwitchCase="4">Has Escogido la Opcion4</p>
+  <p *ngSwitchDefault class="cerrar">Ninguna de las opciones es valida</p>
+</div>
+
+<div>
+
+  <input type="radio" name="opcion" (click)="escogerOpcion(1)" />Opcion 1
+  <input type="radio" name="opcion" (click)="escogerOpcion(2)" />Opcion 2
+  <input type="radio" name="opcion" (click)="escogerOpcion(3)" />Opcion 3
+  <input type="radio" name="opcion" (click)="escogerOpcion(4)" />Opcion 4
+  <input type="radio" selected="selected" (click)="escogerOpcion(0)" />Ocultar
+
+
+
+</div>
+
+<!-- Reenderizar productos mayor de 10 dolares-->
+
+<div *ngFor="let producto of listaElementos; let i = index; let even = even">
+
+  <div *ngIf="producto.precio > 10">
+
+    <p>ID : {{i + 1}}</p>
+    <p [ngStyle]="even?{backgroundColor: 'blue', color: 'white', fontWeight: 'bold', padding: '10px'}:{background: 'green', color: 'red', fontWeight: 'bold', padding: '5px'}" class="producto">{{producto.nombre}} - {{producto.precio}}</p>
+    <p>{{producto.descripcion}}</p>
+
+
+
+  </div>
+
+
+</div>
+
+

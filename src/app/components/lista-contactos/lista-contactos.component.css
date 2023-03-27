@@ -1,0 +1,21 @@
+.contacto{
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  margin-top: 5px;
+}
+
+.contacto:hover{
+  background-color: gray;
+  color: green;
+  cursor: pointer;
+}
+
+.datos_persona{
+  background-color: aquamarine;
+  color: red;
+  border: 1px solid black;
+  margin-left: 10px;
+
+}
+

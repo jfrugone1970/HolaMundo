@@ -1,0 +1,24 @@
+.opcion {
+  border: 2px solid black;
+  display: block;
+  border-radius: 10px;
+  background-color: aqua;
+  color: red;
+
+}
+
+.opcion:hover{
+  border-color: gray;
+  cursor: pointer;
+
+}
+
+.nada {
+  display: block;
+  float: left;
+  margin: 5px;
+  border: 2px solid black;
+  background-color: aqua;
+  color: red;
+
+}

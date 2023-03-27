@@ -1,0 +1,21 @@
+h1 {
+  color: tomato;
+
+}
+
+.saludo {
+  color: #ccc;
+
+}
+
+.anonimo {
+  color: yellow;
+
+}
+
+button {
+  display: block;
+  float: left;
+  margin-left: 250px;
+  margin-top: 20px;
+}

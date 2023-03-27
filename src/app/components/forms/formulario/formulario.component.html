@@ -1,0 +1,60 @@
+<h1>Formulario reactivo!</h1>
+
+<!-- Formulario Reactivo-->
+<form [formGroup]="miFormulario">
+
+   <!-- Prevializacion de los valores de los formularios-->
+   <h2>Datos en vivo del formulario</h2>
+
+   <!-- Usaremos un pipe-->
+   <p>{{ miFormulario.value | json}}</p>
+
+   <!-- Campos del formulario-->
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre :</mat-label>
+      <input matInput placeholder="nombre" formControlName="nombre" />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Apellidos :</mat-label>
+      <input matInput placeholder="apellidos" formControlName="apellidos" />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Correo :</mat-label>
+      <input matInput placeholder="todo@todo.com" formControlName="email" required>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Telefono :</mat-label>
+      <input matInput placeholder="telefono" formControlName="telefono" />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Direccion :</mat-label>
+      <input matInput placeholder="direccion" formControlName="direccion" />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+
+
+
+</form>

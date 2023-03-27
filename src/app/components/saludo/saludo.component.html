@@ -1,0 +1,11 @@
+<span>Hola! {{nombre}}</span>
+
+<h3 [ngClass]="nombre" [innerText]="nombre">
+  <!-- no iniciamos nada en las etiquetas, si los valores vienes definidos por la propiedad-->
+
+
+</h3>
+
+<button id="emit-alert" (click)="alertaSaludo()">Enviar mensaje de saludo al padre</button>
+
+<app-task-lists></app-task-lists>

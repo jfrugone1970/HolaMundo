@@ -1,0 +1,8 @@
+.underlined {
+  border-bottom: 2px solid green;
+
+}
+
+.small {
+  font-size: smaller;
+}

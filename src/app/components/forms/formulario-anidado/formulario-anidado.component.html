@@ -1,0 +1,28 @@
+<form [formGroup]="miFormularioAnidado">
+
+  <h1>Formulario Anidado!!</h1>
+
+  <h3>Datos en vivo del Formulario</h3>
+  <p>{{ miFormularioAnidado.value | json }}</p>
+
+  <h4>Telefono Fijo:</h4>
+
+  <div>
+    <input placeholder="nombre" formControlName="nombre" />
+
+  </div>
+
+  <div formGroupName="fijo">
+    <input placeholder="pais" formControlName="pais"/>
+    <input placeholder="prefijo" formControlName="prefijo"/>
+    <input placeholder="numero" formControlName="numero" />
+  </div>
+
+  <h4>Telefono Movil:</h4>
+  <div formGroupName="movil">
+    <input placeholder="pais" formControlName="pais"/>
+    <input placeholder="prefijo" formControlName="prefijo"/>
+    <input placeholder="numero" formControlName="numero" />
+  </div>
+
+</form>

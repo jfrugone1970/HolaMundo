@@ -1,0 +1,34 @@
+<h3> {{ title }}</h3>
+
+<div *ngFor="let contacto of listaContactos">
+
+  <p class="contacto" (click)="obtenerContacto(contacto.id)"> {{ contacto.nombres}}</p>
+
+
+</div>
+
+<ng-container *ngIf="contactoseleccionado; else noContacto">
+  <div>
+
+    <h5 [ngStyle]="{backcolor: 'yellow', color: 'red'}">Datos de contacto</h5>
+    <p class="datos_persona">Apellidos: {{ contactoseleccionado.apellidos }}</p>
+    <p class="datos_persona">Email: {{ contactoseleccionado.email }}</p>
+    <p class="datos_persona">Edad: {{ contactoseleccionado.edad }}</p>
+
+
+  </div>
+
+</ng-container>
+
+
+
+<ng-template #noContacto >
+
+  <div>
+    <h6 [ngStyle]="{backcolor: 'cyan', color: 'green'}">No has seleccionado ningun contacto...</h6>
+  </div>
+
+</ng-template>
+
+
+

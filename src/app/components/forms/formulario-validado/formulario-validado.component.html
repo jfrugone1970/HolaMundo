@@ -1,0 +1,49 @@
+<h1>Formulario Validado</h1>
+
+<form [formGroup]="miFormularioValidado" (submit)="enviarFormulario()">
+
+  <h1>Formulario Validado!!</h1>
+
+  <h3>Datos en Vivo del Formulario</h3>
+  <p>{{miFormularioValidado.value | json }}</p>
+
+  <!-- Campos de formulario + mensajes de validacion-->
+  <input placeholder="nombre" formControlName="nombre"/>
+  <div *ngif="nombre?.errors?.requerid && nombre?.touched">
+      <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
+  </div>
+
+  <input placeholder="apellidos" formControlName="apellidos"/>
+
+  <input type="number" placeholder="edad" formControlName="edad"/>
+  <div *ngIf="edad?.errors?.['requerid'] && edad?.touched">
+      <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
+  </div>
+  <div *ngIf="edad?.errors?.['min'] && edad?.touched">
+    <p [ngStyle]="{color: 'tomato'}">El campo edad no puede ser inferior a 18..No puedes registrarte</p>
+  </div>
+  <div *ngIf="edad?.errors?.['max'] && edad?.touched">
+    <p [ngStyle]="{color: 'tomato'}">El campo edad no puede ser mayor a 95</p>
+  </div>
+
+  <!-- Email-->
+  <input type="email" placeholder="notiene@notiene.com" formControlName="email"/>
+  <div *ngIf="email?.errors?.['required'] && email?.touched">
+    <p [ngStyle]="{color: 'tomato'}">El campo email es obligatorio</p>
+  </div>
+
+  <!-- Password-->
+  <input type="password" placeholder="password" formControlName="password"/>
+  <div *ngIf="password?.errors?.['requerid'] && password?.touched">
+     <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
+  </div>
+
+  <!-- Acepta-->
+  <input type="checkbox" formControlName="acepta"/>Aceptar
+  <div *ngIf="acepta?.errors?.['requerid'] && acepta?.touched">
+     <p [ngStyle]="{color: 'tomato'}">Debes aceptar aqui</p>
+  </div>
+
+  <!-- Boton submit que se activa cuando el formulario es valido-->
+  <button type="submit" [disabled]="miFormularioValidado.invalid">Enviar</button>
+</form>
