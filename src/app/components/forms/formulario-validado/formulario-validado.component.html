@@ -86,49 +86,6 @@
      <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
   </div>
 
-  <!-- Acepta-->
-
-  <div class="example-container">
-      <mat-checkbox [formControl]="hideRequiredControl">Aceptar</mat-checkbox>
-      <div>
-        <label>Float label: </label>
-      </div>
-
-      <div class="example-form-fields">
-        <mat-form-field appearance="fill"
-            [hideRequiredMarker]="hideRequiredControl.value"
-            [floatLabel]="getFloatLabelValue()">
-          <input matInput placeholder="Simple placeholder" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill" [floatLabel]="getFloatLabelValue()">
-          <mat-label>Both a label and a placeholder</mat-label>
-          <input matInput placeholder="Simple placeholder">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill"
-            [hideRequiredMarker]="hideRequiredControl.value"
-            [floatLabel]="getFloatLabelValue()">
-        </mat-form-field>
-      </div>
-
-  </div>
-
-
-
-  <!-- Fin de Acepta-->
-
-  <p>
-    <mat-form-field appearance="fill">
-      <input matInput type="checkbox" formControlName="acepta"/>Aceptar
-      <mat-icon matSuffix>satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-
-  <div *ngIf="acepta?.errors?.['requerid'] && acepta?.touched">
-     <p [ngStyle]="{color: 'tomato'}">Debes aceptar aqui</p>
-  </div>
 
   <!-- Boton submit que se activa cuando el formulario es valido-->
   <button type="submit" [disabled]="miFormularioValidado.invalid">Enviar</button>

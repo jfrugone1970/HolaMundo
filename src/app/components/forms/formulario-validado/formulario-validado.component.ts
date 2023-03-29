@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {FloatLabelType} from '@angular/material/form-field';
 
 @Component({
@@ -12,9 +12,6 @@ export class FormularioValidadoComponent implements OnInit {
   miFormularioValidado: FormGroup = new FormGroup({});
   minimo: number = 18;
   maximo: number = 95;
-  options: any = null;
-  hideRequiredControl = new FormControl(false);
-  floatLabelControl = new FormControl('auto' as FloatLabelType);
 
   constructor(private _formbuilder: FormBuilder) {}
 
@@ -28,20 +25,13 @@ export class FormularioValidadoComponent implements OnInit {
         // Campo obligatorio y de Tipo email
         email: ['', Validators.compose([Validators.required, Validators.email])],
         // Campo obligatorio de tipo Password
-        password: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')])],
+        password: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z0-9]*')])]
         // Campo booleano
-        acepta: [false, Validators.requiredTrue]
       })
 
-      this.options = this._formbuilder.group({
-        hideRequired: this.hideRequiredControl,
-        floatLabel: this.floatLabelControl,
-      });
+
   }
 
-  getFloatLabelValue(): FloatLabelType {
-    return this.floatLabelControl.value || 'auto';
-  }
 
   get nombre(){
     return this.miFormularioValidado.get('nombre');
@@ -68,10 +58,6 @@ export class FormularioValidadoComponent implements OnInit {
 
   }
 
-  get acepta(){
-    return this.miFormularioValidado.get('acepta');
-
-  }
 
   // Metodo del submit del Formulario
   enviarFormulario(){
