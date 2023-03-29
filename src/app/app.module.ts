@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Seccion de Modulos de Angular Material
 import { MatInputModule } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 import { FormularioComponent } from './components/forms/formulario/formulario.component';
 import { FormularioAnidadoComponent } from './components/forms/formulario-anidado/formulario-anidado.component';
 import { FormularioArrayComponent } from './components/forms/formulario-array/formulario-array.component';
@@ -43,6 +44,7 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
     ReactiveFormsModule,
     // Importamo FormField de Angular Material
     MatFormFieldModule,
+    MatButtonModule,
     MatInputModule,
     HttpClientModule,
     DataTablesModule,

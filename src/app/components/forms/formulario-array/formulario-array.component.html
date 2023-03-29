@@ -7,8 +7,26 @@
 
   <!-- Campos de nombres y apellidos-->
 
-  <input placeholder="nombre" formControlName="nombre"/>
-  <input placeholder="apellidos" formControlName="apellidos" />
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombres :</mat-label>
+      <input matInput placeholder="nombre" formControlName="nombre"/>
+      <mat-icon matSuffix>satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Apellidos :</mat-label>
+      <input matInput placeholder="apellidos" formControlName="apellidos" />
+      <mat-icon matSuffix>satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+
+    </mat-form-field>
+  </p>
+
+
 
   <!-- Agrupacion de telefonos de lista-->
   <div formArrayName="telefonos">
@@ -16,15 +34,49 @@
 
     <div *ngFor="let telefono of telefonosFormulario.controls; let i = index" [formGroupName]="i">
          <h5>Telefono {{i}}</h5>
-         <input placeholder="Prefijo" formControlName="prefijo"/>
-         <input placeholder="Numero" formControlName="numero"/>
 
-         <button (click)="eliminarTelefono(i)">Borrar</button>
+         <p>
+           <mat-form-field appearance="fill">
+             <mat-label>Prefijo :</mat-label>
+             <input matInput placeholder="Prefijo" formControlName="prefijo"/>
+             <mat-icon matSuffix>satisfied</mat-icon>
+             <mat-hint>Hint</mat-hint>
+           </mat-form-field>
+         </p>
+
+         <p>
+           <mat-form-field appearance="fill">
+             <mat-label>Numero :</mat-label>
+             <input matInput placeholder="Numero" formControlName="numero"/>
+             <mat-icon matSuffix>satisfied</mat-icon>
+             <mat-hint>Hint</mat-hint>
+           </mat-form-field>
+         </p>
+
+        <section>
+          <div class="example-label">Raised</div>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary">Eraser</button>
+            <a mat-raised-button (click)="eliminarTelefono(i)">Da click aqui para borrar</a>
+          </div>
+        </section>
+
+
+
+        <!-- <button (click)="eliminarTelefono(i)">Borrar</button> -->
     </div>
 
   </div>
 
   <!-- Boton para anadoir telefono-->
-  <button (click)="anadirTelefono()">Anadir un nuevo telefono</button>
+  <section>
+    <div class="example-label">Raised</div>
+    <div class="example-button-row">
+      <button mat-raised-button color="accent">Add</button>
+      <a mat-raised-button (click)="anadirTelefono()">Da click aqui para anadir telefono</a>
+    </div>
+  </section>
+
+  <!-- <button (click)="anadirTelefono()">Anadir un nuevo telefono</button> -->
 
 </form>

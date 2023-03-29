@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import {FloatLabelType} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-formulario-validado',
@@ -11,13 +12,16 @@ export class FormularioValidadoComponent implements OnInit {
   miFormularioValidado: FormGroup = new FormGroup({});
   minimo: number = 18;
   maximo: number = 95;
+  options: any = null;
+  hideRequiredControl = new FormControl(false);
+  floatLabelControl = new FormControl('auto' as FloatLabelType);
 
   constructor(private _formbuilder: FormBuilder) {}
 
   ngOnInit(): void {
       this.miFormularioValidado = this._formbuilder.group({
         // Campo obligatorio de valores
-        nombre: ['', Validators.required],
+        nombre: ['', Validators.required], // Campo obligatorio
         apellidos: '',
         // Campo obligatorio y de tipo minimo y maximo
         edad: ['', Validators.compose([Validators.required, Validators.min(this.minimo), Validators.max(this.maximo)])],
@@ -28,6 +32,15 @@ export class FormularioValidadoComponent implements OnInit {
         // Campo booleano
         acepta: [false, Validators.requiredTrue]
       })
+
+      this.options = this._formbuilder.group({
+        hideRequired: this.hideRequiredControl,
+        floatLabel: this.floatLabelControl,
+      });
+  }
+
+  getFloatLabelValue(): FloatLabelType {
+    return this.floatLabelControl.value || 'auto';
   }
 
   get nombre(){

@@ -7,22 +7,74 @@
 
   <h4>Telefono Fijo:</h4>
 
-  <div>
-    <input placeholder="nombre" formControlName="nombre" />
+  <div [formGroup]="miFormularioAnidado">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="nombre" formControlName="nombre" />
+
+      <mat-icon matSuffix>Nombre</mat-icon>
+      <mat-hint>Persona</mat-hint>
+    </mat-form-field>
+
+    <div formGroupName="fijo">
+      <mat-form-field appearance="fill">
+        <mat-label>Pais :</mat-label>
+        <input matInput placeholder="pais" formControlName="pais"/>
+        <mat-icon matSuffix>Pais</mat-icon>
+        <mat-hint>Pais</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+         <mat-label>prefijo :</mat-label>
+         <input matInput placeholder="prefijo" formControlName="prefijo"/>
+         <mat-icon matSuffix>Prefijo</mat-icon>
+         <mat-hint>Prefijo</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Numero :</mat-label>
+        <input matInput placeholder="numero" formControlName="numero" />
+        <mat-icon matSuffix>Numero</mat-icon>
+        <mat-hint>Numero</mat-hint>
+      </mat-form-field>
+
+
+
+    </div>
+
+    <div>
+      <h4>Telefono Movil:</h4>
+    </div>
+
+    <div formGroupName="movil">
+      <mat-form-field appearance="fill">
+        <mat-label>Pais :</mat-label>
+        <input matInput placeholder="pais" formControlName="pais"/>
+        <mat-icon matSuffix>Pais</mat-icon>
+        <mat-hint>Pais</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Prefijo :</mat-label>
+        <input matInput placeholder="prefijo" formControlName="prefijo"/>
+        <mat-icon matSuffix>Prefijo</mat-icon>
+        <mat-hint>Prefijo</mat-hint>
+
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Numero :</mat-label>
+        <input matInput placeholder="numero" formControlName="numero" />
+        <mat-icon matSuffix>Numero</mat-icon>
+        <mat-hint>Prefijo</mat-hint>
+      </mat-form-field>
+
+
+    </div>
 
   </div>
 
-  <div formGroupName="fijo">
-    <input placeholder="pais" formControlName="pais"/>
-    <input placeholder="prefijo" formControlName="prefijo"/>
-    <input placeholder="numero" formControlName="numero" />
-  </div>
 
-  <h4>Telefono Movil:</h4>
-  <div formGroupName="movil">
-    <input placeholder="pais" formControlName="pais"/>
-    <input placeholder="prefijo" formControlName="prefijo"/>
-    <input placeholder="numero" formControlName="numero" />
-  </div>
+
 
 </form>

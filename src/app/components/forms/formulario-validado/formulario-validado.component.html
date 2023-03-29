@@ -8,14 +8,43 @@
   <p>{{miFormularioValidado.value | json }}</p>
 
   <!-- Campos de formulario + mensajes de validacion-->
-  <input placeholder="nombre" formControlName="nombre"/>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombres :</mat-label>
+      <input matInput placeholder="nombre" formControlName="nombre"/>
+
+      <mat-icon matSuffix>satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+
+
+
+  </p>
+
   <div *ngif="nombre?.errors?.requerid && nombre?.touched">
-      <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
+    <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
   </div>
 
-  <input placeholder="apellidos" formControlName="apellidos"/>
 
-  <input type="number" placeholder="edad" formControlName="edad"/>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Apellidos :</mat-label>
+      <input matInput placeholder="apellidos" formControlName="apellidos"/>
+      <mat-icon matSuffix>satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Edad :</mat-label>
+      <input matInput type="number" placeholder="edad" formControlName="edad"/>
+      <mat-icon matSuffix>satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+
   <div *ngIf="edad?.errors?.['requerid'] && edad?.touched">
       <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
   </div>
@@ -27,19 +56,76 @@
   </div>
 
   <!-- Email-->
-  <input type="email" placeholder="notiene@notiene.com" formControlName="email"/>
+
+  <p>
+     <mat-form-field appearance="fill">
+       <mat-label>Email :</mat-label>
+       <input matInput type="email" placeholder="notiene@notiene.com" formControlName="email"/>
+       <mat-icon matSuffix>satisfied</mat-icon>
+       <mat-hint>Hint</mat-hint>
+     </mat-form-field>
+  </p>
+
+
+
   <div *ngIf="email?.errors?.['required'] && email?.touched">
     <p [ngStyle]="{color: 'tomato'}">El campo email es obligatorio</p>
   </div>
 
   <!-- Password-->
-  <input type="password" placeholder="password" formControlName="password"/>
+
+  <p>
+    <mat-form-field appearance="fill">
+       <mat-label>Password :</mat-label>
+       <input matInput type="password" placeholder="password" formControlName="password"/>
+       <mat-icon matSuffix>satisfied</mat-icon>
+       <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
   <div *ngIf="password?.errors?.['requerid'] && password?.touched">
      <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
   </div>
 
   <!-- Acepta-->
-  <input type="checkbox" formControlName="acepta"/>Aceptar
+
+  <div class="example-container">
+      <mat-checkbox [formControl]="hideRequiredControl">Aceptar</mat-checkbox>
+      <div>
+        <label>Float label: </label>
+      </div>
+
+      <div class="example-form-fields">
+        <mat-form-field appearance="fill"
+            [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="getFloatLabelValue()">
+          <input matInput placeholder="Simple placeholder" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" [floatLabel]="getFloatLabelValue()">
+          <mat-label>Both a label and a placeholder</mat-label>
+          <input matInput placeholder="Simple placeholder">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill"
+            [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="getFloatLabelValue()">
+        </mat-form-field>
+      </div>
+
+  </div>
+
+
+
+  <!-- Fin de Acepta-->
+
+  <p>
+    <mat-form-field appearance="fill">
+      <input matInput type="checkbox" formControlName="acepta"/>Aceptar
+      <mat-icon matSuffix>satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+
   <div *ngIf="acepta?.errors?.['requerid'] && acepta?.touched">
      <p [ngStyle]="{color: 'tomato'}">Debes aceptar aqui</p>
   </div>
