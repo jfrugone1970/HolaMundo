@@ -25,8 +25,9 @@ export class FormularioValidadoComponent implements OnInit {
         // Campo obligatorio y de Tipo email
         email: ['', Validators.compose([Validators.required, Validators.email])],
         // Campo obligatorio de tipo Password
-        password: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z0-9]*')])]
+        password: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z0-9]*')])],
         // Campo booleano
+        acepta: [false, Validators.requiredTrue]
       })
 
 
@@ -55,6 +56,11 @@ export class FormularioValidadoComponent implements OnInit {
 
   get password(){
     return this.miFormularioValidado.get('password');
+
+  }
+
+  get acepta(){
+     return this.miFormularioValidado.get('acepta');
 
   }
 

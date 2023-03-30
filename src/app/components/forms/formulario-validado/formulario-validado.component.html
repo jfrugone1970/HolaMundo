@@ -86,6 +86,21 @@
      <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
   </div>
 
+  <!-- Acepta-->
+
+  <section class="example-section" [formGroup]="miFormularioValidado">
+    <h4>Select your terms:</h4>
+    <p><mat-checkbox formControlName="acepta">Requerido?</mat-checkbox></p>
+
+  </section>
+
+  <!-- Fin Acepta-->
+
+  <div *ngIf="acepta?.errors?.['requerid'] && acepta?.touched">
+    <p [ngStyle]="{color: 'tomato'}">Debes aceptar los terminos</p>
+  </div>
+
+
 
   <!-- Boton submit que se activa cuando el formulario es valido-->
   <button type="submit" [disabled]="miFormularioValidado.invalid">Enviar</button>

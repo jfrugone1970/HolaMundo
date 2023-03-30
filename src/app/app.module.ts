@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FormularioComponent } from './components/forms/formulario/formulario.component';
 import { FormularioAnidadoComponent } from './components/forms/formulario-anidado/formulario-anidado.component';
 import { FormularioArrayComponent } from './components/forms/formulario-array/formulario-array.component';
@@ -45,6 +46,7 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
     // Importamo FormField de Angular Material
     MatFormFieldModule,
     MatButtonModule,
+    MatCheckboxModule,
     MatInputModule,
     HttpClientModule,
     DataTablesModule,
