@@ -86,6 +86,24 @@
      <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
   </div>
 
+  <!-- Fecha de ingreso -->
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your date</mat-label>
+      <input matInput placeholder="{{fecha}}" formControlName="fecha_dato">
+      <mat-icon matSuffix>satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+
+
+  <div *ngIf="fecha_dato?.errors?.['required'] && fecha_dato?.touched">
+    <p [ngStyle]="{color: 'tomato'}">El campo es requierido</p>
+  </div>
+
+
+  <!-- Fin fecha de ingreso -->
+
   <!-- Acepta-->
 
   <section class="example-section" [formGroup]="miFormularioValidado">
