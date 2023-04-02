@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 // Ejemplo Basico de formulario Reactivo
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {formatDate} from '@angular/common';
+
 
 @Component({
   selector: 'app-formulario',
@@ -9,6 +11,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
+
+  // Para datos de tipo fecha
+  miFecha: any = Date.now();
 
   // Definiendo nuestro formulario
   miFormulario: FormGroup = new FormGroup({});
@@ -25,7 +30,8 @@ export class FormularioComponent implements OnInit {
         apellidos: '',
         email: '',
         telefono: '',
-        direccion: ''
+        direccion: '',
+        fecha: this.miFecha
       }
     );
 

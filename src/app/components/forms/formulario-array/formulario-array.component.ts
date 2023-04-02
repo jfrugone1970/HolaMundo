@@ -34,6 +34,7 @@ export class FormularioArrayComponent implements OnInit {
   // Metodo para anadir Telefono a la lista
   anadirTelefono(){
     const telefonoNuevo = this._formbuilder.group({
+      pais: '',
       prefijo: '',
       numero: ''
     });
