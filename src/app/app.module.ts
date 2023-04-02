@@ -19,6 +19,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { FormularioComponent } from './components/forms/formulario/formulario.component';
 import { FormularioAnidadoComponent } from './components/forms/formulario-anidado/formulario-anidado.component';
 import { FormularioArrayComponent } from './components/forms/formulario-array/formulario-array.component';
@@ -47,6 +49,8 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
     MatFormFieldModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatInputModule,
     HttpClientModule,
     DataTablesModule,

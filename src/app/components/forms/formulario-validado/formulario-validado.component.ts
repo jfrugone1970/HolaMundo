@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {FloatLabelType} from '@angular/material/form-field';
+import {formatDate} from '@angular/common';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class FormularioValidadoComponent implements OnInit {
   miFormularioValidado: FormGroup = new FormGroup({});
   minimo: number = 18;
   maximo: number = 95;
-  fecha: Date = new Date();
+  fecha: any = Date.now();
 
 
   constructor(private _formbuilder: FormBuilder) {}
@@ -33,10 +34,11 @@ export class FormularioValidadoComponent implements OnInit {
         // Campo obligatorio de tipo Password
         password: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z0-9]*')])],
         // campo de fecha
-        fecha_dato: [this.fecha, Validators.required],
-        // Campo booleano
+        fecha_form: [this.fecha, Validators.required],
+        // campo de fecha
         acepta: [false, Validators.requiredTrue]
       })
+
 
 
   }
@@ -67,8 +69,8 @@ export class FormularioValidadoComponent implements OnInit {
 
   }
 
-  get fecha_dato(){
-    return this.miFormularioValidado.get('fecha_dato');
+  get fecha_form(){
+    return this.miFormularioValidado.get('fecha_form');
 
   }
 

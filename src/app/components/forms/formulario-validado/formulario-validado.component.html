@@ -88,17 +88,19 @@
 
   <!-- Fecha de ingreso -->
   <p>
-    <mat-form-field appearance="fill">
-      <mat-label>Enter your date</mat-label>
-      <input matInput placeholder="{{fecha}}" formControlName="fecha_dato">
-      <mat-icon matSuffix>satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fecha_form">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </p>
 
-
-  <div *ngIf="fecha_dato?.errors?.['required'] && fecha_dato?.touched">
-    <p [ngStyle]="{color: 'tomato'}">El campo es requierido</p>
+  <div *ngIf="fecha_form?.errors?.['required'] && fecha_form?.touched">
+      <p [ngStyle]="{color: 'tomato'}">La fecha es obligatoria</p>
   </div>
 
 
