@@ -1,0 +1,10 @@
+.barra_ventana {
+  background-color: blue;
+  color: white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+  color: white;
+  background-color: blue;
+}

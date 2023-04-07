@@ -18,6 +18,7 @@ export class FormularioComponent implements OnInit {
   // Definiendo nuestro formulario
   miFormulario: FormGroup = new FormGroup({});
 
+
   // Inyectamos la clase FormBuilder
   constructor(private _formbuilder: FormBuilder) {}
 
@@ -43,8 +44,10 @@ export class FormularioComponent implements OnInit {
 
     )
 
-  }
+    // Abertura de Dialogo
 
+
+  }
 
 
 }
