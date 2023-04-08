@@ -1,6 +1,9 @@
 .barra_ventana {
   background-color: blue;
   color: white;
+  border-radius: 10%;
+  margin: 10px;
+
 }
 
 .example-spacer {
