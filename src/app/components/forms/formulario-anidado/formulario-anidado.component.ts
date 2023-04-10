@@ -14,6 +14,11 @@ export class FormularioAnidadoComponent implements OnInit {
 
   miFormularioAnidado: FormGroup = new FormGroup({});
 
+  // Para los titulos y subtitulos del formulario
+
+  title: string = 'Reactive Form';
+  subtitle: string = 'Angular Material - Nested Form';
+
   constructor(private _formbuilder: FormBuilder) {}
 
   ngOnInit(): void {

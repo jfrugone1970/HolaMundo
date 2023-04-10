@@ -32,7 +32,7 @@
   <div formArrayName="telefonos">
     <!-- Iteramos por cada uno de los telefonos presentes en la lista-->
 
-    <div *ngFor="let telefono of telefonosFormulario.controls; let i = index" [formGroupName]="i">
+    <div class="fonos" *ngFor="let telefono of telefonosFormulario.controls; let i = index" [formGroupName]="i">
          <h5>Telefono {{i}}</h5>
 
          <p>
@@ -87,6 +87,19 @@
   </section>
 
   <!-- <button (click)="anadirTelefono()">Anadir un nuevo telefono</button> -->
+
+  <!-- Chips -->
+  <mat-chip-listbox aria-label="Dog selection">
+    <mat-chip>
+      <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+      {{ title }}
+    </mat-chip>
+    <mat-chip color="primary">
+      <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+      {{ subtitle }}
+    </mat-chip>
+
+  </mat-chip-listbox>
 
   <mat-toolbar class="barra_ventana">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">

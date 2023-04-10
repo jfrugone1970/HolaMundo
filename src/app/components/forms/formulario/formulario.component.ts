@@ -15,6 +15,11 @@ export class FormularioComponent implements OnInit {
   // Para datos de tipo fecha
   miFecha: any = Date.now();
 
+  // Para los titulos y subtitulos de los formularios
+  title: string = 'Reactive Form';
+  subtitle: string = 'Angular Material - Reactive Form';
+
+
   // Definiendo nuestro formulario
   miFormulario: FormGroup = new FormGroup({});
 

@@ -10,6 +10,11 @@ export class FormularioArrayComponent implements OnInit {
 
   miFormularioArray: FormGroup = new FormGroup({});
 
+  // Para el titulo y subtitulo del formulario
+
+  title: string = 'Reactive Form';
+  subtitle: string = 'Angular Material - Form Array';
+
   constructor(private _formbuilder: FormBuilder) {}
 
   ngOnInit(): void {

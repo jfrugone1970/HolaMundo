@@ -1,3 +1,22 @@
+.fijo {
+  background-color: aquamarine;
+  color:blueviolet;
+  border-radius: 5%;
+  border: 2px solid black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.movil {
+  background-color: burlywood;
+  color:beige;
+  border-radius: 5%;
+  border: 2px solid black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .barra_ventana {
   background-color: blue;
   color: white;

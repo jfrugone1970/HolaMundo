@@ -21,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatChipsModule} from '@angular/material/chips';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormularioComponent } from './components/forms/formulario/formulario.component';
 import { FormularioAnidadoComponent } from './components/forms/formulario-anidado/formulario-anidado.component';
@@ -52,6 +53,7 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
     MatCheckboxModule,
     MatDatepickerModule,
     MatToolbarModule,
+    MatChipsModule,
     MatNativeDateModule,
     MatInputModule,
     HttpClientModule,

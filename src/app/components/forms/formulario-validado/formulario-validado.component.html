@@ -82,7 +82,7 @@
        <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
-  <div *ngIf="password?.errors?.['requerid'] && password?.touched">
+  <div *ngIf="password?.errors?.['pattern'] && password?.touched">
      <p [ngStyle]="{color: 'tomato'}">El campo es obligatorio</p>
   </div>
 
@@ -125,6 +125,19 @@
   <!-- Boton submit que se activa cuando el formulario es valido-->
   <button type="submit" [disabled]="miFormularioValidado.invalid">Enviar</button>
 </form>
+
+<!-- Chips-->
+<mat-chip-listbox aria-label="Dog selection">
+  <mat-chip>
+    <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+    {{ title }}
+  </mat-chip>
+  <mat-chip color="primary">
+    <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+    {{ subtitle }}
+  </mat-chip>
+
+</mat-chip-listbox>
 
 <mat-toolbar class="barra_ventana">
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">

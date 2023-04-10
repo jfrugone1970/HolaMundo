@@ -16,6 +16,10 @@ export class FormularioValidadoComponent implements OnInit {
   maximo: number = 95;
   fecha: any = Date.now();
 
+  // Para titulo y subtitulo del Formulario
+  title: string = 'Reactive Form';
+  subtitle: string = 'Angular Material - Validator Form';
+
 
   constructor(private _formbuilder: FormBuilder) {}
 
