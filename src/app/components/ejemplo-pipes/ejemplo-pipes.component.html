@@ -1,0 +1,84 @@
+<h1>Ejemplos Pipes nativos de Angular!!</h1>
+
+<!-- fechas-->
+<h2>Pipes para fechas</h2>
+
+<p>Mi cumpleanos es {{ dob }}</p>
+<p>Mi cumpleanos con PIPES es {{ dob | date }}</p>
+<p>Mi cumpleanos con PIPES formateado "dd/MM/yyyy" es {{ dob | date: "dd/MM/yyyy" }} </p>
+
+<p>Mi cumpleanos con PIPES DATE Basico Short/Full  es: {{ dob | date: "shortDate" }} </p>
+<p>Mi cumpleanos con PIPES DATE Basico FullDate es: {{ dob | date: "fullDate"}} </p>
+
+<p>Mi cumpleanos con PIPES DATE Basico FULL es : {{ dob | date: dateFormat }}</p>
+<button (click)="cambiarFormato()">Cambiar Formato a {{ !cambio ? 'Short' : 'Full' }}</button>
+
+<!-- Bienvenida -->
+<h3> Bienvenido {{ nombre | uppercase }}</h3>
+<h3> nombre del usuario, @{{ nombre | lowercase }}</h3>
+
+<p>Mi cumpleanos con PIPES DATE Basico Mayuscula es : {{ dob | date: dateFormat | uppercase }} </p>
+<p>Mi cumpleanos con PIPES DATE Basico minuscula es: {{ dob | date: dateFormat | lowercase }} </p>
+
+<!-- Pipes para decimales -->
+<p>{{ numero_PI | number: '.5-5' }}</p>
+<p>PI (2 enteros y 5 decimales) {{ numero_PI | number: '2.8-8'}}</p>
+
+<!-- Currency Moneda -->
+<p>Precio Carrito {{ precioCarrito | currency: 'USD' }}</p>
+<p>Precio Carrito {{ precioCarrito | currency: 'USD':true:'.2-2' }} </p>
+
+<!-- JSON Pipes-->
+<p>{{ persona | json }}</p>
+
+<!-- Pipes personalizados -->
+<h3>Pipes personalizado</h3>
+<p> El valor de {{ valor | multiplica: 10}} puntos</p>
+
+<h3>Pipes personalizado % por Ciento</h3>
+<p>El calculo del tanto por ciento de {{ dato }}, el 8% es {{ dato | tantoPorCiento: 8}}</p>
+
+<h3>Uso de Pipe Personalizado para los numeros</h3>
+
+<div *ngIf="contador <= limite">
+
+   <div>
+      <h5>Ingreso de Numero {{ contador }}</h5>
+      <label for="numero">Numero de ingreso</label>
+      <input type="number" [(ngModel)]="numero" />
+
+      <button (click)="guardaNumero()">Guardar</button>
+
+
+   </div>
+
+
+
+</div>
+
+<p> La media es {{ numero | media: arreglo }}</p>
+
+
+<!-- Para el Factorial de un numero-->
+<h3>Pipe para calculo del factorial</h3>
+
+<div>
+  <label for="numero_fac">Numero a Ingresar</label>
+  <input type="number" [(ngModel)]="numero_fac" />
+
+  <button (click)="ArrancaFact()">Desde donde comienza la multiplicacion del factorial</button>
+
+  <p>El factorial de {{ numero_fac }} es al calcular {{ numero_fac | factorial: valor_decre }}</p>
+
+</div>
+
+
+
+
+<!-- Para la pungtuacion de varios jugadores-->
+
+<h3>Para la puntuacion de varios jugadores</h3>
+
+<p>{{ jugador1 | calcularPuntuacion }}</p>
+<p>{{ jugador2 | calcularPuntuacion }}</p>
+

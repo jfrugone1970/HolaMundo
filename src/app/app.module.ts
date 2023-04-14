@@ -22,11 +22,19 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatChipsModule} from '@angular/material/chips';
+
+
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormularioComponent } from './components/forms/formulario/formulario.component';
 import { FormularioAnidadoComponent } from './components/forms/formulario-anidado/formulario-anidado.component';
 import { FormularioArrayComponent } from './components/forms/formulario-array/formulario-array.component';
 import { FormularioValidadoComponent } from './components/forms/formulario-validado/formulario-validado.component';
+import { EjemploPipesComponent } from './components/ejemplo-pipes/ejemplo-pipes.component';
+import { MultiplicaPipe } from './pipes/multiplica.pipe';
+import { TantoPorCientoPipe } from './pipes/tanto-por-ciento.pipe';
+import { MediaPipe } from './pipes/media.pipe';
+import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
+import { FactorialPipe } from './pipes/factorial.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +47,13 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
     FormularioComponent,
     FormularioAnidadoComponent,
     FormularioArrayComponent,
-    FormularioValidadoComponent
+    FormularioValidadoComponent,
+    EjemploPipesComponent,
+    MultiplicaPipe,
+    TantoPorCientoPipe,
+    MediaPipe,
+    CalcularPuntuacionPipe,
+    FactorialPipe
   ],
   imports: [
     BrowserModule,
