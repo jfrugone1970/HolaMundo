@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +23,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatChipsModule} from '@angular/material/chips';
 
+// Locales Para Pipe
+import { registerLocaleData } from '@angular/common';
+import LocaleES from '@angular/common/locales/es';
+registerLocaleData(LocaleES); // Registrando el LOCALE_ID
 
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormularioComponent } from './components/forms/formulario/formulario.component';
@@ -74,7 +78,12 @@ import { FactorialPipe } from './pipes/factorial.pipe';
     DataTablesModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    // Registrar el LocaleS para Pipe
+    {
+      provide: LOCALE_ID, useValue: 'es'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

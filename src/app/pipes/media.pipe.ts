@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { reduce } from 'rxjs';
 
 @Pipe({
   name: 'media'
@@ -8,21 +9,31 @@ export class MediaPipe implements PipeTransform {
 
 
 
-  transform(value: any, ...args: any[]): any {
+  transform(value: number[], args: any): any {
 
-    let acsuma: any = 0;
-    let contador: any = 1;
+    let i:any = args;
+    let contador:any = 0;
+    let acsuma:any = 0;
 
-    value.array.forEach((dato: any) => {
+    if(value.length < 1) return 'no data'
 
-      acsuma += dato;
-      contador += 1;
+    if(value.length > 1){
 
-    });
+      value.forEach((valor: any) =>{
+           acsuma = reduce(valor);
+           if(contador < i){
+            contador+=1;
+           }
 
 
+      });
+    }
 
-    return acsuma / contador;
+    // Eliminando elementos para quedar con un solo elemento
+    // donde este la media
+    value.pop();
+
+    return value.push(acsuma / contador);
   }
 
 }
