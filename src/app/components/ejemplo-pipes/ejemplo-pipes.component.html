@@ -14,7 +14,7 @@
 <button (click)="cambiarFormato()">Cambiar Formato a {{ !cambio ? 'Short' : 'Full' }}</button>
 
 <!-- Bienvenida -->
-<h3> Bienvenido {{ nombre | uppercase }}</h3>
+<h3> Bienvenido, {{ nombre | uppercase }}</h3>
 <h3> nombre del usuario, @{{ nombre | lowercase }}</h3>
 
 <p>Mi cumpleanos con PIPES DATE Basico Mayuscula es : {{ dob | date: dateFormat | uppercase }} </p>
@@ -72,6 +72,19 @@
 
 </div>
 
+<!-- Para el Area de un Triangulo-->
+<h3>Pipe para calcular el Area de un Triangulo</h3>
+<div>
+   <label for="base">Base del Triangulo</label>
+   <input type="number" [(ngModel)]="base" />
+
+   <label for="altura">Altura del Triangulo</label>
+   <input type="number" [(ngModel)]="altura" />
+
+   <p>El area del Triangulo es : {{ base | areaTriangulo: altura }}</p>
+
+</div>
+
 
 
 
@@ -81,4 +94,11 @@
 
 <p>{{ jugador1 | calcularPuntuacion }}</p>
 <p>{{ jugador2 | calcularPuntuacion }}</p>
+
+<!-- Para las ventas de los vendedores -->
+<h3>Para la venta de varios vendedores</h3>
+
+<p>{{ vendedor1 | calculaVentas }}</p>
+<p>{{ vendedor2 | calculaVentas }}</p>
+<p>{{ vendedor3 | calculaVentas }}</p>
 

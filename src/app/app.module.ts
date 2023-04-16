@@ -39,6 +39,8 @@ import { TantoPorCientoPipe } from './pipes/tanto-por-ciento.pipe';
 import { MediaPipe } from './pipes/media.pipe';
 import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
 import { FactorialPipe } from './pipes/factorial.pipe';
+import { AreaTrianguloPipe } from './pipes/area-triangulo.pipe';
+import { CalculaVentasPipe } from './pipes/calcula-ventas.pipe';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { FactorialPipe } from './pipes/factorial.pipe';
     TantoPorCientoPipe,
     MediaPipe,
     CalcularPuntuacionPipe,
-    FactorialPipe
+    FactorialPipe,
+    AreaTrianguloPipe,
+    CalculaVentasPipe
   ],
   imports: [
     BrowserModule,

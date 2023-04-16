@@ -2,11 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { MultiplicaPipe } from 'src/app/pipes/multiplica.pipe';
 import { TantoPorCientoPipe } from 'src/app/pipes/tanto-por-ciento.pipe';
 import { CalcularPuntuacionPipe } from 'src/app/pipes/calcular-puntuacion.pipe';
+import { CalculaVentasPipe } from 'src/app/pipes/calcula-ventas.pipe';
 import { MediaPipe } from 'src/app/pipes/media.pipe';
 import { FactorialPipe } from 'src/app/pipes/factorial.pipe';
+import { AreaTrianguloPipe } from 'src/app/pipes/area-triangulo.pipe';
 // Importamos el modelo IJugador
 import { IJugador } from 'src/app/models/jugador.interface';
 import { IContacto } from 'src/app/models/contacto.interface';
+// Para Vendedor
+import { IVendedor } from 'src/app/models/vendedor.interface';
 
 @Component({
   selector: 'app-ejemplo-pipes',
@@ -28,6 +32,11 @@ export class EjemploPipesComponent implements OnInit {
   contador: any = 0;
   precioCarrito: number = 100;
 
+  // Para el area de un triangulo
+  base: any = 0;
+  altura: any = 0;
+
+
   // Para Pipe para decimales
   numero_PI: number = 3.14159678564587;
 
@@ -41,6 +50,25 @@ export class EjemploPipesComponent implements OnInit {
   jugador2: IJugador = {
     nombre: 'Pepe',
     puntos: [0, 80, 10, 5]
+  }
+
+  // Para ejemplo de vendedor
+  vendedor1: IVendedor = {
+    nombre: 'Oscar Jose',
+    apellido: 'Gavilanes Gonzalez',
+    ventas: [800, 120, 340, 240, 120, 78, 1200, 36]
+  }
+
+  vendedor2: IVendedor = {
+    nombre: 'Jose Gabriel',
+    apellido: 'Andrade Solines',
+    ventas: [560, 700, 350, 234, 238, 120, 68, 800]
+  }
+
+  vendedor3: IVendedor = {
+    nombre: 'Maria Jose',
+    apellido: 'Castro Andrade',
+    ventas: [780, 267, 238, 256, 869, 23, 56, 78]
   }
 
   // Otro ejemplo para Pipes
