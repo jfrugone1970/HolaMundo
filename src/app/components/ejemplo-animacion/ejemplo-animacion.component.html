@@ -1,0 +1,25 @@
+<h3>Ejemplo de Animacion en Angular</h3>
+
+<div [@animaciones]='state' class="caja">
+  <p>Ejemplo</p>
+
+</div>
+
+
+<div class="botones">
+
+  <p>Ejemplo de animacion {{ state }}</p>
+
+  <button mat-raised-button color='info' (click)="cambiarEstadoActivado()">
+    {{state == 'active' ? 'Desactivar' : 'Activar'}}
+  </button>
+  <button mat-raised-button color='primary' (click)="subir()">Subir Caja</button>
+  <button mat-raised-button color='warn' (click)="bajar()">Bajar Caja</button>
+  <button mat-raised-button color='primary' (click)="rotar()">Rotar_square</button>
+  <button mat-raised-button color='primary' (click)="amplia()">Agranda</button>
+  <button mat-raised-button color='primary' (click)="reduce()">Mas chico</button>
+  <button mat-raised-button color='info' (click)="cambiarTamano()">
+     {{state == 'reducir' ? 'Ampliar' : 'Original'}}
+  </button>
+
+</div>

@@ -41,6 +41,7 @@ import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
 import { FactorialPipe } from './pipes/factorial.pipe';
 import { AreaTrianguloPipe } from './pipes/area-triangulo.pipe';
 import { CalculaVentasPipe } from './pipes/calcula-ventas.pipe';
+import { EjemploAnimacionComponent } from './components/ejemplo-animacion/ejemplo-animacion.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { CalculaVentasPipe } from './pipes/calcula-ventas.pipe';
     CalcularPuntuacionPipe,
     FactorialPipe,
     AreaTrianguloPipe,
-    CalculaVentasPipe
+    CalculaVentasPipe,
+    EjemploAnimacionComponent
   ],
   imports: [
     BrowserModule,
