@@ -33,18 +33,20 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
       transition('inactive => active', animate('1000ms ease-in')),
       transition('active => inactive', animate('1000ms ease-out')),
       transition('active => sube', animate('1000ms ease-in')),
+      transition('active => baja', animate('1000ms ease-in')),
       transition('sube => active', animate('1000ms ease-out')),
       transition('active => baja', animate('1000ms ease-in')),
       transition('sube => baja', animate('1000ms ease-in')),
-      transition('baja => active', animate('1000ms ease-out')),
+      transition('baja => active', animate('1000ms ease-in')),
+      transition('baja => inactive', animate('1000ms ease-out')),
+      transition('baja => sube', animate('1000ms ease-in')),
       transition('inactive => sube', animate('1000ms ease-in')),
       transition('sube => inactive', animate('1000ms ease-out')),
       transition('inactive => baja', animate('1000ms ease-in')),
-      transition('sube => active', animate('1000ms ease-in')),
-      transition('sube => inactive', animate('1000ms ease-out')),
-      transition('baja => active', animate('1000ms ease-in')),
-      transition('baja => inactive', animate('1000ms ease-out')),
-      transition('baja => sube', animate('1000ms ease-out'))
+      transition('rotar => sube', animate('1000ms ease-in')),
+      transition('rotar => inactive', animate('1000ms ease-out')),
+      transition('rotar => active', animate('1000ms ease-in')),
+      transition('rotar => baja', animate('1000ms ease-out'))
     ])
   ]
 })
@@ -90,6 +92,17 @@ export class EjemploAnimacionComponent implements OnInit {
 
   }
 
+  cambiarEstadoArriba() {
+    if(this.state == 'sube'){
+      this.state = 'baja';
+
+    }else {
+      this.state = 'sube';
+
+    }
+
+  }
+
   activar() {
 
     this.state = 'active';
@@ -101,17 +114,7 @@ export class EjemploAnimacionComponent implements OnInit {
 
   }
 
-  subir() {
-    this.state = 'sube';
-
-  }
-
-  bajar() {
-    this.state = 'baja';
-
-  }
-
-  rotar() {
+  rota() {
     this.state = 'rotar';
 
   }

@@ -1,16 +1,17 @@
 .caja {
   height: 200px;
   width: 200px;
+  margin: 40px auto;
+  border: 2px solid black;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin: 40px auto;
   border-radius: 20%;
-  border: 2px solid black;
+  box-shadow: #999;
   background-color: tomato;
   color: white;
   font-weight: bolder;
   font-size: medium;
-  text-align: center;
+  justify-content: center;
 }
 
 .botones {
