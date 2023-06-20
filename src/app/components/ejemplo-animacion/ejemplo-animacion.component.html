@@ -16,6 +16,9 @@
   <button mat-raised-button color='primary' (click)="cambiarEstadoArriba()">
     {{state == 'sube' ? 'Arriba' : 'Baja'}}
   </button>
+  <button mat-raised-button color='info' (click)="cambiarEstadoPosicion()">
+    {{state == 'esquina' ? 'A la esquina' : 'Al Origen'}}
+  </button>
   <button mat-raised-button color='primary' (click)="rota()">Girar</button>
   <button mat-raised-button color='primary' (click)="amplia()">Agranda</button>
   <button mat-raised-button color='primary' (click)="reduce()">Mas chico</button>

@@ -23,6 +23,14 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
       state('rotar', style({
         transform: 'rotate(90deg)'
       })),
+      state('esquina', style({
+        transform: 'translate(80px, 40px)',
+        backgroundColor: 'yellow'
+      })),
+      state('volver', style({
+        transform: 'translate(20px, 40px)',
+        backgroundColor: 'yellow'
+      })),
       state('ampliar', style({
         transform: 'scale(2,2)',
         backgroundColor: 'green'
@@ -46,7 +54,13 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
       transition('rotar => sube', animate('1000ms ease-in')),
       transition('rotar => inactive', animate('1000ms ease-out')),
       transition('rotar => active', animate('1000ms ease-in')),
-      transition('rotar => baja', animate('1000ms ease-out'))
+      transition('rotar => baja', animate('1000ms ease-out')),
+      transition('volver => esquina', animate('1000ms ease-in')),
+      transition('volver => inactive', animate('1000ms ease-out')),
+      transition('volver => active', animate('1000ms ease-in')),
+      transition('esquina => volver', animate('1000ms ease-out')),
+      transition('esquina => active', animate('1000ms ease-in')),
+      transition('esquina => inactive', animate('1000ms ease-out'))
     ])
   ]
 })
@@ -101,6 +115,16 @@ export class EjemploAnimacionComponent implements OnInit {
 
     }
 
+  }
+
+  cambiarEstadoPosicion() {
+    if(this.state == 'esquina'){
+      this.state = 'volver';
+
+    }else {
+      this.state = 'esquina';
+
+    }
   }
 
   activar() {
