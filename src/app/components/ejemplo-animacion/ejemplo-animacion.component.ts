@@ -24,11 +24,11 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
         transform: 'rotate(90deg)'
       })),
       state('esquina', style({
-        transform: 'translate(80px, 40px)',
+        transform: 'translateY(10px)',
         backgroundColor: 'yellow'
       })),
       state('volver', style({
-        transform: 'translate(20px, 40px)',
+        transform: 'translateY(-10px)',
         backgroundColor: 'yellow'
       })),
       state('ampliar', style({
