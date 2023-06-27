@@ -13,6 +13,7 @@ export class UsersService {
 
    }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getUser(id: any): Observable<any>{
 
 
@@ -21,6 +22,7 @@ export class UsersService {
 
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ObtenerUsuarios(page: any): Observable<any>{
 
 

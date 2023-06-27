@@ -1,7 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {FloatLabelType} from '@angular/material/form-field';
-import {formatDate} from '@angular/common';
 
 
 @Component({
@@ -12,16 +11,26 @@ import {formatDate} from '@angular/common';
 export class FormularioValidadoComponent implements OnInit {
 
   miFormularioValidado: FormGroup = new FormGroup({});
-  minimo: number = 18;
-  maximo: number = 95;
-  fecha: any = Date.now();
+  public minimo: number;
+  public maximo: number;
+  public fecha: any;
 
   // Para titulo y subtitulo del Formulario
-  title: string = 'Reactive Form';
-  subtitle: string = 'Angular Material - Validator Form';
+  public title: string;
+  public subtitle: string;
 
 
-  constructor(private _formbuilder: FormBuilder) {}
+  constructor(private _formbuilder: FormBuilder) {
+
+    this.minimo = 18;
+    this.maximo = 95;
+    this.fecha = Date.now;
+
+    // Para titulo y subtitulo del Formulario
+    this.title = 'Reactive Form';
+    this.subtitle = 'Angular Material - Validator Form';
+
+  }
 
   ngOnInit(): void {
       // Para fechas

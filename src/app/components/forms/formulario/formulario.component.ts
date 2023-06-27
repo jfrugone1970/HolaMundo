@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 // Ejemplo Basico de formulario Reactivo
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {formatDate} from '@angular/common';
 
 
 @Component({
@@ -13,11 +12,12 @@ import {formatDate} from '@angular/common';
 export class FormularioComponent implements OnInit {
 
   // Para datos de tipo fecha
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   miFecha: any = Date.now();
 
   // Para los titulos y subtitulos de los formularios
-  title: string = 'Reactive Form';
-  subtitle: string = 'Angular Material - Reactive Form';
+  public title: string;
+  public subtitle: string;
 
 
   // Definiendo nuestro formulario
@@ -25,7 +25,11 @@ export class FormularioComponent implements OnInit {
 
 
   // Inyectamos la clase FormBuilder
-  constructor(private _formbuilder: FormBuilder) {}
+  constructor(private _formbuilder: FormBuilder) {
+
+    this.title = 'Reactive Form';
+    this.subtitle = 'Angular Material - Reactive Form';
+  }
 
   ngOnInit(): void {
 
@@ -42,6 +46,7 @@ export class FormularioComponent implements OnInit {
     );
 
     //Nos suscribimos a los cambios que ocurren en el formulario
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     this.miFormulario.valueChanges.subscribe((valor: any) => {
       console.log(valor)
 

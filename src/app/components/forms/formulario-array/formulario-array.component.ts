@@ -12,10 +12,14 @@ export class FormularioArrayComponent implements OnInit {
 
   // Para el titulo y subtitulo del formulario
 
-  title: string = 'Reactive Form';
-  subtitle: string = 'Angular Material - Form Array';
+  public title: string;
+  public subtitle: string;
 
-  constructor(private _formbuilder: FormBuilder) {}
+  constructor(private _formbuilder: FormBuilder) {
+
+    this.title = 'Reactive Form';
+    this.subtitle = 'Angular Material - Form Array';
+  }
 
   ngOnInit(): void {
 

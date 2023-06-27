@@ -6,9 +6,10 @@ import { IJugador } from '../models/jugador.interface';
 })
 export class CalcularPuntuacionPipe implements PipeTransform {
 
-  transform(jugador: IJugador, ...args: unknown[]): string {
+  transform(jugador: IJugador): string {
 
-    let puntuacionTotal: number = 0;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let puntuacionTotal: any = 0;
 
     jugador.puntos.forEach((puntuacion) => {
 

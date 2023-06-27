@@ -6,9 +6,9 @@ import { IVendedor } from '../models/vendedor.interface';
 })
 export class CalculaVentasPipe implements PipeTransform {
 
-  transform(vendedor: IVendedor, ...args: unknown[]): string {
+  transform(vendedor: IVendedor): string {
 
-    let ventasTotal: number = 0;
+    let ventasTotal = 0;
 
     vendedor.ventas.forEach((valor) =>{
 

@@ -10,9 +10,10 @@ export class AuthService {
 
   constructor(private _http: HttpClient) { }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   login(email: string, password: string): Observable<any>{
 
-    let body = {
+    const body = {
       email: email,
       password: password
     }

@@ -66,10 +66,11 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
 })
 export class EjemploAnimacionComponent implements OnInit {
 
-  state: string = 'inactive';
+  public estado: string;
 
   constructor() {
 
+    this.estado = 'inactive';
 
   }
 
@@ -92,84 +93,88 @@ export class EjemploAnimacionComponent implements OnInit {
 
    // }, 500)
 
+   console.log('Hola mundo animacion');
+
   }
 
   cambiarEstadoActivado() {
 
-    if(this.state == 'active'){
-          this.state = 'inactive';
+    if(this.estado === 'active'){
+          this.estado = 'inactive';
 
     }else {
-          this.state = 'active';
+          this.estado = 'active';
 
     }
 
   }
 
   cambiarEstadoArriba() {
-    if(this.state == 'sube'){
-      this.state = 'baja';
+    if(this.estado === 'sube'){
+      this.estado = 'baja';
 
     }else {
-      this.state = 'sube';
+      this.estado = 'sube';
 
     }
 
   }
 
   cambiarEstadoPosicion() {
-    if(this.state == 'esquina'){
-      this.state = 'volver';
+    if(this.estado === 'esquina'){
+      this.estado = 'volver';
 
     }else {
-      this.state = 'esquina';
+      this.estado = 'esquina';
 
     }
   }
 
   activar() {
 
-    this.state = 'active';
+    this.estado = 'active';
 
 
   }
 
   desactivar() {
 
+    console.log('Desactivar');
+
   }
 
   rota() {
-    this.state = 'rotar';
+    this.estado = 'rotar';
 
   }
 
   amplia() {
-    this.state = 'ampliar';
+    this.estado = 'ampliar';
 
   }
 
   reduce() {
-    this.state = 'reducir';
+    this.estado = 'reducir';
 
   }
 
   cambiarTamano() {
-    if(this.state == 'reducir'){
-      this.state = 'ampliar';
+    if(this.estado === 'reducir'){
+      this.estado = 'ampliar';
 
     }else {
-      this.state = 'reducir';
+      this.estado = 'reducir';
 
     }
   }
 
   cambiarActivo() {
-    this.state = 'active';
+    this.estado = 'active';
 
   }
 
   cambiarInactivo() {
-    this.state = 'inactive';
+    this.estado = 'inactive';
 
   }
 

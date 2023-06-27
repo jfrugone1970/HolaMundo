@@ -15,7 +15,7 @@ export type Producto = {
 })
 export class TaskListsComponent implements OnInit {
 
-  public opcion: number = 1;
+  public opcion: number;
 
   public listaElementos: Producto[] = [
     {
@@ -41,11 +41,17 @@ export class TaskListsComponent implements OnInit {
     }
 
   ]
-  public cargando: boolean = false;
+  public cargando: boolean;
 
-  constructor() {}
+  constructor() {
+
+    this.opcion = 1;
+    this.cargando = false;
+  }
 
   ngOnInit(): void {
+
+    console.log("Task-list");
 
   }
 

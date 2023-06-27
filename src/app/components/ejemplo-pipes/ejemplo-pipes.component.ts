@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit } from '@angular/core';
 import { MultiplicaPipe } from 'src/app/pipes/multiplica.pipe';
 import { TantoPorCientoPipe } from 'src/app/pipes/tanto-por-ciento.pipe';
@@ -19,26 +20,35 @@ import { IVendedor } from 'src/app/models/vendedor.interface';
 })
 export class EjemploPipesComponent implements OnInit {
 
+  // Utilizacion de los Pipe
+  public multiplica:number | MultiplicaPipe;
+  public tantoPorCiento:number | TantoPorCientoPipe;
+  public calcularPuntuacion:number | CalcularPuntuacionPipe;
+  public calculaVentas:any | CalculaVentasPipe;
+  public media:number | MediaPipe;
+  public factorial:number | FactorialPipe;
+  public areaTriangulo:number | AreaTrianguloPipe;
+
   dob: Date = new Date(1970,3,20);
-  cambio: boolean = true;
-  nombre: string = "Lcdo. Jose Fernando Frugone Jaramillo";
-  dato: any = 60;
-  valor: any = 8;
-  numero: any = 0;
-  numero_fac: any = 0;
-  valor_decre: any = 0;
-  arreglo: any[] = [];
-  limite: any = 4;
-  contador: any = 0;
-  precioCarrito: number = 100;
+  public cambio: boolean;
+  public nombre: string;
+  public dato: number;
+  public valor: number;
+  public numero: number;
+  public numero_fac: number;
+  public valor_decre: number;
+  public arreglo: number[];
+  public limite: number;
+  public contador: number;
+  public precioCarrito: number;
 
   // Para el area de un triangulo
-  base: any = 0;
-  altura: any = 0;
+  public base: number;
+  public altura: number;
 
 
   // Para Pipe para decimales
-  numero_PI: number = 3.14159678564587;
+  public numero_PI: number;
 
   // Ejemplo Pipes
   jugador1: IJugador = {
@@ -81,10 +91,43 @@ export class EjemploPipesComponent implements OnInit {
   }
 
 
-  constructor() {}
+  constructor() {
+    this.cambio = true;
+    this.nombre = "Lcdo. Jose Fernando Frugone Jaramillo";
+    this.dato = 60;
+    this.valor = 8;
+    this.numero = 0;
+    this.numero_fac = 0;
+    this.valor_decre = 0;
+    this.arreglo = [];
+    this.limite = 4;
+    this.contador = 0;
+    this.precioCarrito = 100;
+
+    // Para el area de un triangulo
+    this.base = 0;
+    this.altura = 0;
+
+
+  // Para Pipe para decimales
+    this.numero_PI = 3.14159678564587;
+
+    // Utilizacion de los Pipe
+    this.multiplica = 12;
+    this.tantoPorCiento = 0;
+    this.calcularPuntuacion = 0;
+    this.calculaVentas = 0;
+    this.media = 2;
+    this.factorial = 0;
+    this.areaTriangulo = 0;
+
+
+
+  }
 
   ngOnInit(): void {
 
+    console.log("PIPE");
 
   }
 

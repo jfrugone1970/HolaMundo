@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ContactoService } from 'src/app/services/contacto.service';
 import { IContacto } from 'src/app/models/contacto.interface';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-lista-contactos',
@@ -12,7 +12,7 @@ export class ListaContactosComponent implements OnInit, OnDestroy {
 
   public listaContactos: IContacto[] = [];
   public contactoseleccionado: IContacto | undefined;
-  public title: string = "Lista de contactos";
+  public title: string;
   public subcription: Subscription | undefined;
 
 
@@ -20,6 +20,7 @@ export class ListaContactosComponent implements OnInit, OnDestroy {
 
   constructor(private _contactoservice: ContactoService) {
 
+    this.title = "Lista de contactos";
 
 
   }
@@ -28,7 +29,7 @@ export class ListaContactosComponent implements OnInit, OnDestroy {
 
     this._contactoservice.obtenerContactos()
         .then((lista: IContacto[]) => this.listaContactos = lista)
-        .catch((error: any) => console.log(`Ha habido un error al recuperar la lista de contados ${error}`))
+        .catch((error: string) => console.log(`Ha habido un error al recuperar la lista de contados ${error}`))
         .finally(() => console.log('Lista de contactos'));
 
 

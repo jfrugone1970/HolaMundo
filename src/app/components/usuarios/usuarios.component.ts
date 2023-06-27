@@ -1,9 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { IUsuario } from 'src/app/models/users.interface';
-import { HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { Observable, Subscription} from 'rxjs';
+import { Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-usuarios',
@@ -13,15 +11,17 @@ import { Observable, Subscription} from 'rxjs';
 export class UsuariosComponent implements OnInit, OnDestroy {
 
   public lista_usuarios: IUsuario[] = [];
-  public title: string = "Lista de Usuarios";
+  public title: string;
   public subscription: Subscription | undefined;
-  public pagina: any;
-  public id_usuario: any;
+  public pagina: number;
+  public id_usuario: number;
 
   constructor(private _userservice: UsersService) {
 
     this.pagina = 0;
     this.id_usuario = 0;
+    this.title = "Lista de Usuarios";
+
 
   }
 
@@ -39,7 +39,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
 
   }
 
-  getUnicoUsuario(id: any) {
+  getUnicoUsuario(id: number) {
 
     this.subscription = this._userservice.getUser(id).subscribe(
       (response) => {
@@ -58,7 +58,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
 
 
 
-  ObtenerUsuario(id: any) {
+  ObtenerUsuario(id: number) {
 
     /*
     this._authservice.login('eve.holt@reqres.in', 'cityslicka').subscribe(

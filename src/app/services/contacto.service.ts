@@ -14,6 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class ContactoService {
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() { }
 
   obtenerContactos(): Promise<IContacto[]> {
@@ -30,7 +31,7 @@ export class ContactoService {
 
     // Creamos un observable
 
-    let observable: Observable<IContacto> = new Observable(observer => {
+    const observable: Observable<IContacto> = new Observable(observer => {
 
        observer.next(contacto);
        observer.complete();

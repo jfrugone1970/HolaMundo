@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Pipe, PipeTransform } from '@angular/core';
 import { reduce } from 'rxjs';
 
@@ -9,13 +11,13 @@ export class MediaPipe implements PipeTransform {
 
 
 
-  transform(value: number[], args: any): any {
+  transform(value: number[], args: number): number {
 
-    let i:any = args;
+    const i:number = args;
     let contador:any = 0;
     let acsuma:any = 0;
 
-    if(value.length < 1) return 'no data'
+    if(value.length < 1) return 0
 
     if(value.length > 1){
 

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, OnDestroy, OnChanges, Output, EventEmitter } from '@angular/core';
-import { TaskListsComponent } from 'src/app/modules/lists/task-lists/task-lists.component';
 
 @Component({
   selector: 'app-saludo',

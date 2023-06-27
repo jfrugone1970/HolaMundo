@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -8,9 +9,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class AreaTrianguloPipe implements PipeTransform {
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   transform(value: any, args: any): any {
 
-    let alt: any = parseFloat(args);
+    const alt: any = parseFloat(args);
 
     return ((value * alt) / 2);
   }

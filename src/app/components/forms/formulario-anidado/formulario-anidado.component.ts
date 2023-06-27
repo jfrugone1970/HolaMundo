@@ -16,10 +16,15 @@ export class FormularioAnidadoComponent implements OnInit {
 
   // Para los titulos y subtitulos del formulario
 
-  title: string = 'Reactive Form';
-  subtitle: string = 'Angular Material - Nested Form';
+  public title: string;
+  public subtitle: string;
 
-  constructor(private _formbuilder: FormBuilder) {}
+  constructor(private _formbuilder: FormBuilder) {
+
+    this.title = 'Reactive Form';
+    this.subtitle = 'Angular Material - Nested Form';
+
+  }
 
   ngOnInit(): void {
 

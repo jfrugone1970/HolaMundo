@@ -1,7 +1,5 @@
-import { Component, OnInit, ɵclearResolutionOfComponentResourcesQueue } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { ILogin } from 'src/app/models/login.interface';
-import { Observable, Subscription } from 'rxjs';
 
 
 @Component({
@@ -11,8 +9,12 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class LoginFormComponent implements OnInit {
 
-  public title: string = "Lista de Usuario";
-  constructor(private _authservice: AuthService) {}
+  public title: string;
+  constructor(private _authservice: AuthService) {
+
+    this.title = "Lista de Usuario";
+
+  }
 
   ngOnInit(): void {
 
